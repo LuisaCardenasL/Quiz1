@@ -120,16 +120,21 @@ public class GUIPalabras extends JFrame{
                 buscar = tfBuscar.getText();
                 contarPalabras = new ArrayList<>();
                 
-                for (int i = 0; i<palabrasAlmacenadas.size(); i++){
-                    if(buscar.equals(palabrasAlmacenadas)){
-                        buscarPalabras += palabrasAlmacenadas.get(i).chars().count();
+                for(int i = 0; i < palabrasAlmacenadas.size(); i++){
+                    if(buscar.equals(palabrasAlmacenadas.get(i))){
+                        buscarPalabras++;
+                        System.out.println("entre");
                     }
                 }
                 
                 taMostrar.setText("La cantidad de veces que aparece la palabra " + buscar + " es: " + buscarPalabras);
+                
+                tfBuscar.setText(" ");
             }
+            
             if(ae.getSource() == bMostrar){
                 taMostrar.setText(" ");
+                tfBuscar.setText(" ");
                 
                 String mostrar = "";
                 String separador = "_________________";
@@ -150,6 +155,12 @@ public class GUIPalabras extends JFrame{
                 
             }
             if(ae.getSource() == bReemplazar){
+                taMostrar.setText(" ");
+                
+                String reemplazar = tfBuscar.getText();
+                
+                for (int i = 0; i < palabrasAlmacenadas.size(); i++){
+                }
             }
         }
 
