@@ -111,30 +111,27 @@ public class GUIPalabras extends JFrame{
         public void actionPerformed(ActionEvent ae) {
             
             if(ae.getSource() == bBuscar){
-                taMostrar.setText(" ");
+                taMostrar.setText("");
                 
                 String buscar = "";
                 int buscarPalabras = 0;
-                ArrayList<String> contarPalabras;
                 
                 buscar = tfBuscar.getText();
-                contarPalabras = new ArrayList<>();
+                
                 
                 for(int i = 0; i < palabrasAlmacenadas.size(); i++){
-                    if(buscar.equals(palabrasAlmacenadas.get(i))){
+                    if(buscar.equalsIgnoreCase(palabrasAlmacenadas.get(i))){
                         buscarPalabras++;
-                        System.out.println("entre");
                     }
                 }
-                
                 taMostrar.setText("La cantidad de veces que aparece la palabra " + buscar + " es: " + buscarPalabras);
                 
-                tfBuscar.setText(" ");
+                tfBuscar.setText("");
             }
             
             if(ae.getSource() == bMostrar){
-                taMostrar.setText(" ");
-                tfBuscar.setText(" ");
+                taMostrar.setText("");
+                tfBuscar.setText("");
                 
                 String mostrar = "";
                 String separador = "_________________";
@@ -155,12 +152,15 @@ public class GUIPalabras extends JFrame{
                 
             }
             if(ae.getSource() == bReemplazar){
-                taMostrar.setText(" ");
+                taMostrar.setText("");
                 
                 String reemplazar = tfBuscar.getText();
                 
+                
                 for (int i = 0; i < palabrasAlmacenadas.size(); i++){
                 }
+                
+                tfBuscar.setText("");
             }
         }
 
