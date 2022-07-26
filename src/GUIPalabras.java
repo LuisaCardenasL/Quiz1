@@ -154,12 +154,21 @@ public class GUIPalabras extends JFrame{
             if(ae.getSource() == bReemplazar){
                 taMostrar.setText("");
                 
-                String reemplazar = tfBuscar.getText();
+                String obtener = "";
                 
+                obtener = tfBuscar.getText();
+                String[] separando = obtener.split("-");
+                
+                String buscar = separando[0];
+                String reemplazo = separando[1];
                 
                 for (int i = 0; i < palabrasAlmacenadas.size(); i++){
+                    if(buscar.equalsIgnoreCase(palabrasAlmacenadas.get(i))){
+                        palabrasAlmacenadas.set(i, reemplazo);
+                    }
                 }
                 
+                taMostrar.setText("reemplazo exitoso!");
                 tfBuscar.setText("");
             }
         }
